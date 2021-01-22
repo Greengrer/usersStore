@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete user</title>
+</head>
+<body>
+<form action="/delete">
+    <label for="name">Input name of the user to delete:</label>
+    <input type="text" id="name" placeholder="name:" name="name">
+    <input type="submit" value="Delete">
+</form>
+<#if success??>
+    <#if success>
+        <p>Success!</p>
+    <#else>
+        <p>Try another.</p>
+    </#if>
+</#if>
+<a href="users">/users</a>
+<a href="add">/add</a>
+</body>
+</html>

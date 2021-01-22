@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Add user</title>
+</head>
+<body>
+<form action="/add" method="post" style="width:40vw;margin:auto;margin-top:14vh;">
+    <div class="form-group">
+        <label for="first-name">First name:</label>
+        <input type="text" id="first-name" class="form-control" name="First-name" pattern=".+">
+    </div>
+    <div class="form-group">
+        <label for="last-name">Last name:</label>
+        <input type="text" id="last-name" class="form-control" name="Last-name" pattern=".+">
+    </div>
+    <div class="form-group">
+        <label for="salary">Salary:</label>
+        <input type="number" id="salary" class="form-control" name="Salary" pattern="[0-9]+">
+    </div>
+    <button type="submit" class="btn btn-primary">Add user</button>
+</form>
+
+<a href="users" style="border-radius:2px;margin-left:30vw;margin-top:20px;" class="btn btn-link btn-lg active" role="button" aria-pressed="true">/users</a>
+</body>
+</html>
