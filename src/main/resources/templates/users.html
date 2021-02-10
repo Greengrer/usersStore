@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>UserList</title>
+</head>
+<body>
+<form id="search-form" action="/filter" method="get">
+    <div class="input-group">
+        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+               aria-describedby="search-addon" name="search"/>
+        <button type="submit" class="btn btn-outline-primary">search</button>
+    </div>
+</form>
+<table class="table table-bordered table-hover" style="width:60vw;margin:auto;">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col" style="font-style:italic;">First Name</th>
+        <th scope="col" style="font-style:italic;">Last Name</th>
+        <th scope="col" style="font-style:italic;">Salary</th>
+        <th scope="col" style="font-style:italic;">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <form id="full-list-form" action="/delete" method="post">
+        <#list users as user>
+        <tr>
+            <th>${user.firstName}</th>
+            <th>${user.lastName}</th>
+            <th>${user.salary}</th>
+            <th>
+                <button type="submit" form="full-list-form" name="id" value="${user.id}" class="btn btn-success"
+                        style="margin-right:5px;">
+                    Delete
+                </button>
+                <button type="submit" form="full-list-form" name="id" formaction="/edit" formmethod="get"
+                        value="${user.id}"
+                        class="btn btn-danger">Edit
+                </button>
+            </th>
+        </tr>
+    </
+    #list>
+    </form>
+    </tbody>
+</table>
+<a href="add-user.html" style="border-radius:2px;margin-left:20vw;margin-top:20px;" class="btn btn-link btn-lg active"
+   role="button" aria-pressed="true">/add</a>
+</body>
+</html>
